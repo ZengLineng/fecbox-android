@@ -48,7 +48,8 @@ object Settings {
         val versionName = BuildConfig.VERSION_NAME.lowercase()
         if (versionName.contains("-alpha") ||
             versionName.contains("-beta") ||
-            versionName.contains("-rc")
+            versionName.contains("-rc") ||
+            versionName.contains("-fec")
         ) {
             "beta"
         } else {

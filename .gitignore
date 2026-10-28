@@ -13,3 +13,6 @@ local.properties
 /service-account-credentials.json
 /CLAUDE.md
 /.claude/
+
+*.keystore
+*.p12

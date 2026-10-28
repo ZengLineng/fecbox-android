@@ -68,17 +68,18 @@ android {
     }
 
     defaultConfig {
-        applicationId = "io.nekohasekai.sfa"
+        applicationId = "dev.zenglineng.fecbox"
         minSdk = 24
         targetSdk = 37
         versionCode = getVersionProps("VERSION_CODE").toInt()
         versionName = getVersionProps("VERSION_NAME")
-        base.archivesName.set("SFA-${versionName}")
+        base.archivesName.set("FECBox-${versionName}")
     }
 
     signingConfigs {
         create("release") {
             storeFile = file("release.keystore")
+            storeType = "PKCS12"
             storePassword = getProps("KEYSTORE_PASS")
             keyAlias = getProps("ALIAS_NAME")
             keyPassword = getProps("ALIAS_PASS")

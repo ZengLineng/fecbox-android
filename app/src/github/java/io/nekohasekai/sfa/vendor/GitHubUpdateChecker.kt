@@ -14,8 +14,8 @@ import java.io.Closeable
 
 class GitHubUpdateChecker : Closeable {
     companion object {
-        private const val RELEASES_URL = "https://api.github.com/repos/SagerNet/sing-box/releases"
-        private const val METADATA_FILENAME = "SFA-version-metadata.json"
+        private const val RELEASES_URL = "https://api.github.com/repos/ZengLineng/sing-box-fec/releases"
+        private const val METADATA_FILENAME = "FECBox-version-metadata.json"
     }
 
     private val client = Libbox.newHTTPClient().apply {
@@ -54,7 +54,7 @@ class GitHubUpdateChecker : Closeable {
 
         val isLegacy = Build.VERSION.SDK_INT < Build.VERSION_CODES.M
         val apkAsset = release.assets.find { asset ->
-            asset.name.endsWith(".apk") &&
+            asset.name.endsWith("-universal.apk") &&
                 !asset.name.contains("play") &&
                 asset.name.contains("legacy-android-5") == isLegacy
         }
